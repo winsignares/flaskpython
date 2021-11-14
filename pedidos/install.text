@@ -1,0 +1,3 @@
+pip install flask flask-sqlalchemy flask-marshmallow marshmallow-sqlalchemy pymysql
+
+python src/app.py
