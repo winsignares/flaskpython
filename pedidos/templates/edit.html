@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card card-body">
+        <form action="/updateArticulo/{{pedido['id']}}" method="POST"> 
+            <div class="form-group">
+              <input type="text" class="form-control" value="{{pedido['NombrePersona']}}" name="NombrePersona" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" value="{{pedido['Direccion']}}"  name="Direccion" placeholder="Direccion">
+            </div>
+            <select class="form-control" name="IdArticulos" aria-label="Default select example">
+              <option selected>Favor seleccionar el Articulo</option>
+              {% for articulo in articulos %}
+                <option  value="{{articulo.id}}" >{{articulo.Nombre}}</option>
+              {% endfor %}
+            </select>
+            <br />
+            <button class="btn btn-primary btn-block">
+              Guardar 
+            </button>
+          </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

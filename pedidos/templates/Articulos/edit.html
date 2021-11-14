@@ -1,0 +1,24 @@
+{% extends "./layout.html" %}
+{% block body %}
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card card-body">
+        <form action="/updateArticulo/{{articulo['id']}}" method="POST">
+          <div class="form-group">
+            <input type="text" name="Nombre" value="{{articulo['Nombre']}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="Precio" value="{{articulo['Precio']}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Actualizar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
